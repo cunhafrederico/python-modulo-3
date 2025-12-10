@@ -61,11 +61,11 @@ def delete_task(id):
       task = t
       break
 
-    if not task:
-      return jsonify({"message": "Não foi possível encontrar a atividade"}), 404
+  if not task:
+    return jsonify({"message": "Não foi possível encontrar a atividade"}), 404
     
-    tasks.remove(task)
-    return jsonify({"message": "Tarefa deletada com sucesso"})
+  tasks.remove(task)
+  return jsonify({"message": "Tarefa deletada com sucesso"})
 
 if __name__ == "__main__":
   app.run(debug=True)
